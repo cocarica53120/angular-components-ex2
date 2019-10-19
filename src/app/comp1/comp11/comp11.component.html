@@ -3,4 +3,12 @@
 	<p>
 		comp11 works!
 	</p>
+	<p>La premiere personne s'appelle {{data.persons[0].name}} et a {{data.persons[0].age}} ans!!!!
+	</p>
+	<ul>
+		<li *ngFor="let p of data.persons">
+			name:{{p.name}} /  age:{{p.age}}
+		</li>
+	</ul>
+
 </fieldset>

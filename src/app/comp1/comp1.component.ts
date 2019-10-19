@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Comp11Component } from './comp11/comp11.component';
+import { Comp11Service } from './comp11/comp11.service';
+
 
 @Component({
   selector: 'app-comp1',
@@ -7,7 +10,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class Comp1Component implements OnInit {
 
-  constructor() { }
+  private comp11s: Comp11Component[];
+
+  constructor(data: Comp11Service) { 
+    this.comp11s = [];
+    this.comp11s.push(new Comp11Component(data));
+    this.comp11s.push(new Comp11Component(data));
+  }
 
   ngOnInit() {
   }

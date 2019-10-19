@@ -3,5 +3,13 @@
 	<p>
 		comp1 works!
 	</p>
+  <h1> On Child Comp11 component </h1>
   <app-comp11></app-comp11>
+
+  <h1> On List of Child Comp11 component </h1>
+  <div *ngFor="let comp of comp11s">
+    <app-comp11></app-comp11>
+  </div>
+
+
 </fieldset>
