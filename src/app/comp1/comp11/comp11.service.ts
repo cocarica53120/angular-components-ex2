@@ -1,29 +1,35 @@
 import { Injectable } from '@angular/core';
+import { Person, Persons } from './person';
+import * as moment from 'moment';
 
 @Injectable()
 export class Comp11Service {
 
-  private _persons = [
+  private _persons: Persons = [
     {
       name: 'toto',
-      age: 45
+      birthDate: moment.utc("02-25-1995", "MM-DD-YYYY"),
     },
     {
       name: 'titi',
-      age: 4
-    },
-    
+      birthDate: moment.utc("12-05-2005", "MM-DD-YYYY"),
+    }
   ]
   constructor() { }
 
-  get persons(): any[] {
-    console.log('get persons', this._persons)
+  get persons(): Persons {
     return this._persons;
   }
-  set persons(tab: any[]) {
-    console.log('set persons. this._persons=', this._persons, 'tab=', tab)
+  set persons(tab: Persons) {
     Object.assign(this._persons, tab);
-    console.log('set persons', this._persons)
+  }
+
+  getPerson(id: number): Person {
+    return this.persons[id];
+  }
+
+  addPerson(person: Person) {
+    this.persons.push(person);
   }
 
 }

@@ -14,8 +14,15 @@ export class Comp1Component implements OnInit {
 
   constructor(data: Comp11Service) { 
     this.comp11s = [];
-    this.comp11s.push(new Comp11Component(data));
-    this.comp11s.push(new Comp11Component(data));
+    console.log(data.persons.length);
+    // this.comp11s.push(new Comp11Component(data));
+    // this.comp11s.push(new Comp11Component(data));
+    // this.comp11s.push(new Comp11Component(data));
+    // this.comp11s.push(new Comp11Component(data));
+    for(let person of data.persons) {
+      console.log('person=', person);
+      this.comp11s.push(new Comp11Component(data));
+    }
   }
 
   ngOnInit() {

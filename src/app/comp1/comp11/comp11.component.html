@@ -1,14 +1,9 @@
 <fieldset>
-	<legend>comp11</legend>
-	<p>
-		comp11 works!
-	</p>
-	<p>La premiere personne s'appelle {{data.persons[0].name}} et a {{data.persons[0].age}} ans!!!!
-	</p>
-	<ul>
-		<li *ngFor="let p of data.persons">
-			name:{{p.name}} /  age:{{p.age}}
-		</li>
-	</ul>
-
+	<legend>{{title}}</legend>
+	<!-- <p> {{ personString}} </p> -->
+	<p> {{person.name | uppercase }} a {{age}} ans</p>
+	<input matInput [matDatepicker]="picker1" placeholder="Choose a date"
+  (dateInput)="dateInput('input', $event)" (dateChange)="dateChange('change', $event)">
+	<mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>
+	<mat-datepicker #picker1 [startAt]="startDate"></mat-datepicker>
 </fieldset>
